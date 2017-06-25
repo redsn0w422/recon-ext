@@ -38,6 +38,8 @@ if (url_items.length == 5) {
 	// sheet.innerHTML = inner;
 	// document.body.appendChild(sheet);
 
+	$('.public').css('width', '100%');
+	$('.public').append("<div id=\"loading\" style=\"font-size: 15.5px\">Waiting for score</div>")
 	$.ajax({
 	    url: "https://localhost:5000/score",
 	    type: 'GET',
@@ -63,18 +65,23 @@ if (url_items.length == 5) {
   			item += "<span>★</span><span>★</span></div>"
   			item += "</div>";
   			console.log(item);
-			// $(".public").append(item);
-			// $(".public").append(Math.round(score * 100) + "%");
-			// $(".repohead-details-container").append(item);
-			// $(".repohead-details-container").append("<div id='rateYo'></div>");
-			// $("#rateYo")
-			$(".public").append("<div id='rateYo' style=\"margin-left: -5px\"></div>");
+
+  			$('#loading').remove();
+			$(".public").append("<div id='rateYo-wrapper' style=\"margin-top: 2px\"><div id='rateYo' style=\"margin-left: -5px; float: left;\"></div></div>");
 			$("#rateYo").rateYo({
 				rating: score * 5,
 				readOnly: true,
 				starWidth: "20px",
 				ratedFill: "#0366d6"
 			});
+
+			var color = "";
+
+			var roundedScore = Math.round(score * 1000) / 1000;
+			roundedScore *= 100;
+			roundedScore = Math.round(roundedScore * 1000) / 1000
+			var scorediv = "<div style=\"font-size: 15.5px; margin-top: -3px;\">" + roundedScore + "%" + "</div>"
+			$(".public").append(scorediv);
 	    },
 	    error: function (error) {
 	    	console.log("ERROR");
