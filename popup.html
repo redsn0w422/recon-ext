@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>recon</title>
+    
+    <center><font face="times new roman" size="5" color="DarkSlateGray" >Enter your GitHub username</font> </center>
+    <br> </br>
+    <center>
+    <input type="text" id="input1"/>
+    <button id="but" onclick="getInput()">Enter</button>
+  </center>
+    <script type="text/javascript">
+      
+     function getInput(){
+        var text=document.getElementById('input1').value;
+     }
+
+    </script>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        min-width:400px;
+        min-height: 150px;
+        background: #1c92d2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #f2fcfe, #85e3f7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #f2fcfe, #85e3f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      #input1 {
+        height: 20px;
+        width: 150px;
+      }
+      #but {
+      background: #4a7b99;
+      padding: 8px 15px 8px 15px;
+      border: none;
+      color: #fff;
+      }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+     <!--
+    <script src="popup.js"></script> 
+  -->
+    <script src="undead.js"></script> 
+
+  </head>
+  <body>
+    <div id="status"></div>
+    <img id="image-result" hidden>
+  </body>
+</html>
+

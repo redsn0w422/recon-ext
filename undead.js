@@ -1,0 +1,1 @@
+alert("Repo score is 100") 
