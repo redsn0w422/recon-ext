@@ -5,16 +5,27 @@
   "description": "Score a GitHub Repo",
   "version": "1.0",
 
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html",
-    "default_title": "Click here!"
-  },
+  // "browser_action": {
+  //   "default_icon": "icon.png"
+  //   // "default_popup": "popup.html",
+  //   // "default_title": "Click here!"
+  // },
   
-  "permissions": [
-    "tabs", 
-    "http://www.google.com/*",
-    "http://github.com/login/oauth/authorize"
+  // "permissions": [
+  //   "tabs", 
+  //   "http://www.google.com/*",
+  //   "http://github.com/login/oauth/authorize"
+  // ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "jquery-2.2.4.min.js", "rateyo.min.js", "undead.js"
+      // ]
+      ],
+      "css": [ "rateyo.min.css" ]
+    }
   ]
-
 }

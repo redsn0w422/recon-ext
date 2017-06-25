@@ -12,7 +12,7 @@ window.onload = function() {
 		'scope': 'user repo public_repo',
 		'app_name': "recon"
 	});
-	oauth.authorize(function() {
-	  alert("auth");
-	});
+	// oauth.authorize(function() {
+	//   alert("auth");
+	// });
 }
