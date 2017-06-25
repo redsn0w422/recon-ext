@@ -43,8 +43,8 @@ if (url_items.length == 5) {
 	    type: 'GET',
 	    dataType: 'json',
 	    data: {
-	    	'owner': 'hackillinois',
-	    	'repo': 'effective-goggles'
+	    	'owner': owner_name,
+	    	'repo': repo_name
 	    },
 	    success: function (result) {
 			console.log(result);
@@ -70,7 +70,8 @@ if (url_items.length == 5) {
 			// $("#rateYo")
 			$(".public").append("<div id='rateYo'></div>");
 			$("#rateYo").rateYo({
-				rating: score * 5
+				rating: score * 5,
+				readOnly: true
 			});
 	    },
 	    error: function (error) {
