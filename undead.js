@@ -68,10 +68,12 @@ if (url_items.length == 5) {
 			// $(".repohead-details-container").append(item);
 			// $(".repohead-details-container").append("<div id='rateYo'></div>");
 			// $("#rateYo")
-			$(".public").append("<div id='rateYo'></div>");
+			$(".public").append("<div id='rateYo' style=\"margin-left: -5px\"></div>");
 			$("#rateYo").rateYo({
 				rating: score * 5,
-				readOnly: true
+				readOnly: true,
+				starWidth: "20px",
+				ratedFill: "#0366d6"
 			});
 	    },
 	    error: function (error) {
