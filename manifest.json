@@ -12,7 +12,9 @@
   },
   
   "permissions": [
-    "tabs", "http://www.google.com/*"
+    "tabs", 
+    "http://www.google.com/*",
+    "http://github.com/login/oauth/authorize"
   ]
 
 }
